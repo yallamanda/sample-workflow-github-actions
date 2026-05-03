@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
      - name: run shell 
-       run: echo " hello AI"
+       run: echo " Hello AI World"
      - name: multi line script
        run: |
          node --version
