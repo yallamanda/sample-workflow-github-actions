@@ -1,6 +1,6 @@
 name: run shell commands
 
-on: [push,pull]
+on: [push]
 
 jobs:
   run-shell:
