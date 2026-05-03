@@ -1,4 +1,4 @@
-name: run shell commands
+name: shell commands
 
 on: [push]
 
@@ -12,3 +12,11 @@ jobs:
        run: |
          node -v
          npm -v
+  run-windows-commands:
+    runs-on: windows-latest
+    steps:
+     - name: powershell commands
+       run: Get-Location
+     - name: run Bash commands
+       run: pwd
+       shell: bash
