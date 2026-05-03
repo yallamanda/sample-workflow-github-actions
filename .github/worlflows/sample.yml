@@ -1,0 +1,14 @@
+name: run shell commands
+
+on: [push,pull]
+
+jobs:
+  run-shell:
+    runs-on: ubuntu-latest
+    steps:
+     - name: run shell 
+       run: echo " hello AI"
+     - name: multi line script
+       run: |
+         node --version
+         npm --version  
