@@ -1,6 +1,20 @@
 name: action workflow
 
-on: [push]
+on:
+ push:
+  branches:
+   - main
+   - demo/* # It starts with demo like demo-project123
+   - '!sample' #Ignore this branch
+
+  tags:
+    - v1.*  # its like v1.0 ,v1.2
+
+  paths:
+    - '**.js' # like index.js,js/index.js
+    - "**.md" 
+    - "docs/*"
+    - "!docs/file.txt"
 
 jobs:
  run-github-actions:

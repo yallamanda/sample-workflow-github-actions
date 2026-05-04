@@ -1,0 +1,19 @@
+name: custom env variables
+
+on: [push]
+
+env: 
+  SUBSCRIBE: Subscribe
+
+Jobs:
+  Subscribe-My-Channel:
+    runs-on: ubuntu-latest
+    env:
+     LIKE: Like and share
+    steps:
+      - name: Please Like,share and Subscribe DevOpsHint channel
+        run: echo "$LIKE and $SUBSCRIBE my $CHANNEL_NAME channel "
+
+        env:
+         CHANNEL_NAME: DevOpsHint
+
