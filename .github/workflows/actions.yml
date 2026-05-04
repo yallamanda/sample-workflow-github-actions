@@ -10,7 +10,10 @@ jobs:
        run: |
         pwd
         ls -a
-     - name: Checkout
+        echo "$GITHUB_SHA"
+        echo "$GITHUB_REPOSITORY"
+        echo "$GITHUB_WORKSPACE"
+     - name: Checkouts
        uses: actions/checkout@v1  
      - name: List files after checkout
        run: |
