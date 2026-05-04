@@ -1,15 +1,15 @@
 name: action workflow
 
-on:
- schedule:
-  -  cron: "* * * * *"
- pull_request:
-  types: [closed,opened,assigned,reopened]
+on: [push]
 
 jobs:
  run-github-actions:
    runs-on: ubuntu-latest
    steps:
+     - name: List files
+       run: |
+        pwd
+        ls
      - name: simple javascript actions
        uses: actions/hello-world-javascript-action@v1
        with:
