@@ -4,11 +4,17 @@ on: [push]
 
 jobs:
   default_env_vars:
-    runs_on: ubuntu-latest
+    runs-on: ubuntu-latest   # ✅ fixed (runs_on → runs-on)
     steps:
+      - name: Testing secrets
+        run: |
+          echo "$DEVOPS"
+        env:
+          DEVOPS: ${{ secrets.SECRET_NAME }}  
+
       - name: Print default GitHub environment variables
         run: |
-         echo "GITHUB_WORKFLOW: $GITHUB_WORKFLOW"
+          echo "GITHUB_WORKFLOW: $GITHUB_WORKFLOW"
           echo "GITHUB_RUN_ID: $GITHUB_RUN_ID"
           echo "GITHUB_RUN_NUMBER: $GITHUB_RUN_NUMBER"
           echo "GITHUB_JOB: $GITHUB_JOB"
