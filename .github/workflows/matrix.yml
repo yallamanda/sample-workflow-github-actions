@@ -4,6 +4,9 @@ on: [push]
 
 jobs:
   node_versions:
+   strategy:
+     matrix:
+      node-versions: [6,7,8]
     runs-on: ubuntu-latest
 
     steps:
@@ -13,7 +16,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: ${{matrix.node-versions}}
 
       - name: After setup Node.js version
         run: node -v
