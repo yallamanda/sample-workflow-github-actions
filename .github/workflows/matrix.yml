@@ -1,0 +1,19 @@
+name: matrix
+
+on: [push]
+
+jobs:
+  node_versions:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check default Node.js version
+        run: node -v
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: After setup Node.js version
+        run: node -v
